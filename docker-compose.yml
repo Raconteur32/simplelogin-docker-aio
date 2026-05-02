@@ -10,8 +10,8 @@ services:
     volumes:
       - "data:/sl"
       - "uploads:/code/static/upload"
-      - "./certs/cert.pem:/etc/ssl/certs/cert.pem"
-      - "./certs/cert.key:/etc/ssl/private/cert.key"
+      - '${TLS_CERT_FILE}:/etc/ssl/certs/cert.pem'
+      - '${TLS_CERT_KEY}:/etc/ssl/private/cert.key'
       - "./simplelogin.env:/code/.env"
     env_file:
       - db.env
